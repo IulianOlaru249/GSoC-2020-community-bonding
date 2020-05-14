@@ -2,6 +2,7 @@
 A few tasks received during the community bonding period of GSoC 2020.
 
 ## Simple Unix I/O operrations
+SO ~lab2~
 
     Unix file descriptor = integer indexing a table with pointers to structures 
 describing files opened by a process.
