@@ -1,0 +1,15 @@
+    Used watch -d lsof -p $(pidof redirect) to check how redirect works.
+
+    Stderr is redirected to a new file descriptor, so everything printed to stderr 
+is printed to that file: dup2(fd2, STDERR_FILENO).
+
+    If the parameters were in diffrent order, it would have ment that fd2 si 
+redirected to stderr, so wverything written to fd2 would have been refirected to
+stderr: dup2(STDERR_FILENO, fd2).
+
+************************************************************************************
+    dup(fd1) can be interpreted as: associate the first available file 
+descriptor to the file refered by fd1.
+
+    dup2(fd1, fd2) can be interpreted as: associate file descriptor fd2 to 
+file refered by file descriptor fd1.

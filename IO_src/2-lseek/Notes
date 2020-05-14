@@ -1,0 +1,10 @@
+    The pos will be 200: 100 bytes from the Makefile reported to 
+the starting position, and another 100 reporting to the prev 100 
+byes from the same file.
+
+    fd2 should be closed in order to make sure no file descriptor
+points to the Makefile. Even if fd1 closes, fd2 will still point to
+the Makefile.
+
+    TO REMEMBER: The cursor will keep its position in the file even 
+if the filed is refered by another file descriptor.
